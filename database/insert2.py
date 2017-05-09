@@ -65,7 +65,8 @@ now = datetime.datetime.now()
 date= now.strftime("%d-%m-%Y %H:%M")
 
 # Open database connection
-db = MySQLdb.connect("localhost","id985784_amith","amith9481447790","id985784_root" )
+db = MySQLdb.connect("166.62.27.148","smartbin","amith9481447790","id985784_root" )
+
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
