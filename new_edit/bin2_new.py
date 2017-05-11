@@ -81,7 +81,7 @@ while 1:
 	cursor = db.cursor()
 
 # Prepare SQL query to INSERT a record into the database.
-	sql = """INSERT INTO bin2(garbage,
+	sql = """INSERT INTO bin1(garbage,
 	 smoke,bio,other)
 	 VALUES (%s,%s,%s,%s)"""
 
@@ -97,4 +97,5 @@ while 1:
 # disconnect from server
 	db.close()
 GPIO.cleanup()
+
 
