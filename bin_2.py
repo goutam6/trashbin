@@ -98,4 +98,3 @@ while 1:
 	db.close()
 GPIO.cleanup()
 
-

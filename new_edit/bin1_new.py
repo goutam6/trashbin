@@ -21,12 +21,12 @@ import sys
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)          
-GPIO.setup(21,GPIO.OUT) 
-p = GPIO.PWM(21,50)              
+GPIO.setup(13,GPIO.OUT) 
+p = GPIO.PWM(13,50)              
 p.start(7.5)              
 
-TRIG = 16
-ECHO = 20
+TRIG = 23
+ECHO = 24
 while 1:
 
 	print ("Distance Measurement In Progress")
@@ -81,7 +81,7 @@ while 1:
 	cursor = db.cursor()
 
 # Prepare SQL query to INSERT a record into the database.
-	sql = """INSERT INTO bin2(garbage,
+	sql = """INSERT INTO bin1(garbage,
 	 smoke,bio,other)
 	 VALUES (%s,%s,%s,%s)"""
 
@@ -97,5 +97,3 @@ while 1:
 # disconnect from server
 	db.close()
 GPIO.cleanup()
-
-
