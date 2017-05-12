@@ -2,18 +2,18 @@ import time, sys
 import RPi.GPIO as GPIO
  
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
  
 def action(pin):
-    print 'bio degradable content detected'
+    print 'detection in progress'
     return
  
-GPIO.add_event_detect(12, GPIO.RISING)
-GPIO.add_event_callback(12, action)
+GPIO.add_event_detect(7, GPIO.RISING)
+GPIO.add_event_callback(7, action)
  
 try:
     while True:
-        print ' detection in progress'
+        print ' smoke detected'
         time.sleep(0.5)
 except KeyboardInterrupt:
     GPIO.cleanup()

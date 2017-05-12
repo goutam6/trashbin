@@ -17,10 +17,11 @@ from getpass import getpass
 import os
  
 import sys
-
-
 GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)          
+
+GPIO.setup(4,GPIO.IN,pull_up_down=GPIO.PUD_UP)
+GPIO.setwarnings(False) 
+          
 GPIO.setup(13,GPIO.OUT) 
 p = GPIO.PWM(13,50)              
 p.start(7.5)              
@@ -28,6 +29,12 @@ p.start(7.5)
 TRIG = 23
 ECHO = 24
 while 1:
+	i=GPIO.input(4)
+	if i==1:
+		print "smoke detected"
+	else:
+		print "smoke not detected"	
+	#time.sleep(0.1)
 
 	print ("Distance Measurement In Progress")
 
@@ -96,4 +103,5 @@ while 1:
 
 # disconnect from server
 	db.close()
+	time.sleep(2)
 GPIO.cleanup()

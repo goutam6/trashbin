@@ -20,14 +20,21 @@ import sys
 
 
 GPIO.setmode(GPIO.BCM)
+GPIO.setup(18,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setwarnings(False)          
-GPIO.setup(18,GPIO.OUT) 
-p = GPIO.PWM(18,50)              
+GPIO.setup(19,GPIO.OUT) 
+p = GPIO.PWM(19,50)              
 p.start(7.5)              
 
 TRIG = 12
 ECHO = 25
 while 1:
+	
+	i=GPIO.input(18)
+	if i==0:
+		print "bio degradable content  detected"
+	else:
+		print "sensor alive"	
 
 	print ("Distance Measurement In Progress")
 

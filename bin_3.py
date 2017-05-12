@@ -23,7 +23,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)          
 GPIO.setup(26,GPIO.OUT) 
 p = GPIO.PWM(26,50)              
-p.start(7.5)              
+p.start(2.5)              
 
 TRIG = 17
 ECHO = 27
@@ -62,9 +62,9 @@ while 1:
 	print ("Distance:",distance1,"%")
 	if distance<4:                                                                 
 			                                     
-			p.ChangeDutyCycle(2.5)                 
+			p.ChangeDutyCycle(7.5)                 
 			time.sleep(2)                           
-			p.ChangeDutyCycle(7.5)                  
+			p.ChangeDutyCycle(2.5)                  
 			time.sleep(2)  
 	now = datetime.datetime.now()
 
